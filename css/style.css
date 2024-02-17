@@ -1,0 +1,329 @@
+/* start global rules */
+:root {
+    --dark-color: #19283f;
+    --main-color: #33d1cc;
+    --red-color: #ff3150;
+    --red-light-color: #ff3150d2;
+    --yellow-color: #ffc400;
+    --blue-color: #33d1cc;
+    --section-bg-color: #eff7fa;
+}
+
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar-track {
+    transition: 0.3s;
+    background-color: var(--section-bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--red-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--red-light-color);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-main {
+    background-color: var(--red-light-color);
+    color: var(--yellow-color);
+    padding: 0.5rem 1rem;
+    display: block;
+    width: fit-content;
+}
+
+
+.btn-main:hover {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+
+.main-title::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: var(--blue-color);
+}
+/* end global rules */
+
+/* start navbar */
+.navbar {
+    background-color: var(--dark-color);
+    z-index: 10;
+}
+
+.navbar ul li .nav-link {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar ul li .nav-link.active,
+.navbar ul li .nav-link:focus,
+.navbar ul li .nav-link:hover {
+    color: var(--main-color);
+}
+
+.search {
+    border-left: 1px solid var(--main-color);
+}
+
+.search svg {
+    color: var(--main-color);
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    border-color: var(--main-color);
+}
+
+.navbar-toggler svg {
+    color: white;
+}
+/* end navbar */
+
+/* start landing */
+.landing {
+    background-color: var(--dark-color);
+    min-height: calc(100vh - 72px);
+}
+/* end landing */
+
+/* start skills */
+.skills .skill .heading {
+    height: 12rem;
+    margin-bottom: 1rem;
+}
+
+.skills .skill .heading svg {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skills .skill .heading .number {
+    font-size: 11rem;
+    color: var(--section-bg-color);
+}
+
+.skills .skill .heading .icon {
+    color: var(--blue-color);
+    font-size: 4rem;
+}
+
+.skills .skill h3 {
+    color: var(--yellow-color);
+    font-weight: bold;
+}
+/* end skills */
+
+/* start projects */
+.projects {
+    background-color: var(--section-bg-color);
+}
+
+.projects ul li {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.projects ul li:not(.active):hover {
+    color: var(--red-color);
+}
+
+.projects .cat {
+    border: 5px solid white;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.projects .cat::after {
+    content: attr(data-cat);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #33d1ccc9;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.3s;
+    transform: translateX(-100%);
+}
+
+.projects .cat:hover::after {
+    transform:translateX(0);
+}
+
+
+
+.projects ul li.active {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+/* end projects */
+
+/* start about */
+.about .main-p {
+    max-width: 500px;
+}
+/* end about */
+
+/* start team */
+.team {
+    background-color: var(--section-bg-color);
+}
+
+.team h2 {
+    color: var(--yellow-color);
+}
+
+.team h3 {
+    color: white;
+    background-color: var(--main-color);
+}
+/* end team */
+
+/* start new-project */
+.new-project {
+    background-color: var(--dark-color);
+}
+/* end new-project */
+
+/* start blog */
+.blog .image {
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+}
+
+.blog .image:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(221, 221, 221, 0.3);
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    animation: overlay 0.5s linear both;
+}
+
+@keyframes overlay {
+    0% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.blog .image:hover img {
+    transform: rotate(5deg) scale(1.2);
+}
+
+.blog img {
+    transition: 0.3s;
+}
+/* end blog */
+
+/* start subscribe */
+.subscribe {
+    background-color: var(--yellow-color);
+}
+
+.subscribe h4 {
+    color: var(--dark-color);
+}
+
+.subscribe input[type="email"] {
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.subscribe input[type="email"]:focus {
+    outline: none;
+}
+
+.subscribe input[type="email"]::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+.subscribe .btn-main {
+    background-color: var(--dark-color);
+}
+/* end subscribe */
+
+/* start footer */
+.footer {
+    background-color: var(--dark-color);
+}
+
+.footer .logo-section p:last-of-type span:first-of-type {
+    color: var(--blue-color);
+}
+
+.footer .logo-section p:last-of-type span:last-of-type {
+    color: var(--yellow-color);
+}
+
+.footer .social li {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    cursor: pointer;
+}
+
+.footer .social li.facebook {
+    background-color: #1877f2;
+}
+
+.footer .social li.twitter {
+    background-color: #1da1f2;
+}
+
+.footer .social li.linkedin {
+    background-color: #0077b5;
+}
+
+.footer .social li.youtube {
+    background-color: #ff0000;
+}
+
+.footer .social li svg {
+    height: 20px;
+    width: 20px;
+}
+
+/* end footer */
